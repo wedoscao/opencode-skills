@@ -1,11 +1,13 @@
 ---
 name: paper-reader
-description: Read, summarize, critique, and extract structured information from scientific papers, and explain them in plain language. Use whenever the user gives you a paper or study to read or understand — as a PDF file, an arXiv/DOI/PubMed/bioRxiv link, or pasted text — or asks for a summary, a critical evaluation of a study, the methods/results/limitations pulled out, a comparison of multiple studies, or a plain-language explanation of research. Trigger even when the user doesn't say "paper" or "study" (e.g. "what does this actually show?", "is this finding legit?", "summarize this article", "explain this like I'm not a scientist", "how strong is this evidence?"). This is for reading and understanding existing papers — not for writing a paper or searching for one.
+description: Read, summarize, critique, and extract structured information from scientific papers, and explain them in plain language. Use whenever the user gives you a paper or study to read or understand — as a PDF file, an arXiv/DOI/PubMed/bioRxiv link, or pasted text — or asks for a summary, a critical evaluation of a study, the methods/results/limitations pulled out, a comparison of multiple studies, or a plain-language explanation of research. Trigger even when the user doesn't say "paper" or "study" (e.g. "what does this actually show?", "is this finding legit?", "summarize this article", "explain this like I'm not a scientist", "how strong is this evidence?"). This is for reading and understanding existing papers — not for writing a paper or for searching for literature on a topic (use the scientific-researcher skill for that).
 ---
 
 # Paper Reader
 
 Read scientific papers the way a careful, skeptical researcher would: understand what the authors did, what they actually found, and how strong the evidence is — then communicate it at whatever depth and level of expertise the reader needs.
+
+> **Finding papers vs. reading them.** This skill reads and critiques papers the user already has. If the user wants to *find* literature on a topic, search for evidence, or answer a question with the body of research, use the `scientific-researcher` skill instead.
 
 ## Get the full text first
 

@@ -10,6 +10,7 @@ A collection of [opencode](https://opencode.ai) skills.
 | [`code-review`](code-review/SKILL.md) | Performs a thorough, general-purpose code review and produces a structured report. Triggers when asked to review code, a pull request or diff, look for bugs or vulnerabilities, or give feedback on code quality. |
 | [`git-commits-prs`](git-commits-prs/SKILL.md) | Writes Conventional Commits messages and brief pull request titles/descriptions for the current changes, and produces the exact git and GitHub CLI commands to run them. |
 | [`paper-reader`](paper-reader/SKILL.md) | Reads, summarizes, critiques, and extracts structured information from scientific papers, and explains them in plain language. Handles PDFs, arXiv/DOI/PubMed links, and pasted text, and compares multiple papers. |
+| [`scientific-researcher`](scientific-researcher/SKILL.md) | Researches a scientific question end-to-end: searches for and discovers literature, evaluates source quality and evidence strength, and synthesizes findings into a cited summary or literature review. |
 | [`skill-creator`](skill-creator/SKILL.md) | Creates new skills, modifies and improves existing ones, and measures skill performance via evals and benchmarks. |
 
 Each skill directory contains a `SKILL.md` with its instructions. Skills that
@@ -25,6 +26,7 @@ cp -r /tmp/opencode-skills/brainstorming \
       /tmp/opencode-skills/code-review \
       /tmp/opencode-skills/git-commits-prs \
       /tmp/opencode-skills/paper-reader \
+      /tmp/opencode-skills/scientific-researcher \
       /tmp/opencode-skills/skill-creator \
       ~/.config/opencode/skills/
 ```
