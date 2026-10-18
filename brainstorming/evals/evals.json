@@ -1,0 +1,23 @@
+{
+  "skill_name": "brainstorming",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to come up with a name for my new app. It's a mobile app that helps people split restaurant bills with friends, aimed at college students. I want something catchy and easy to remember.",
+      "expected_output": "Generates a range of name ideas (not just one), grouped or labeled, with a brief justification for each, and reflects the target audience/context. May use analogy or SCAMPER. Ends by narrowing to a few strongest candidates and a next step rather than declaring a single winner.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We're a small SaaS team and our churn rate went up 40% this quarter. I don't know what's causing it or what to do. Can you help me think through this?",
+      "expected_output": "Uses divergence then convergence: proposes several possible causes (not just one), asks focused clarifying questions where needed, and offers structured ways to explore (e.g. first principles or pre-mortem). Surfaces tradeoffs and suggests a concrete next step rather than a single definitive answer.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I've been asked to redesign our onboarding flow but I have no constraints yet and the brief is vague. What if we just made it 10x faster? Help me brainstorm approaches.",
+      "expected_output": "Explores the '10x faster' constraint productively (constraints & inversion), generates multiple distinct approaches, pushes for breadth (including unconventional ideas), and keeps judgment deferred until after generating. Ends with a shortlist and a next action.",
+      "files": []
+    }
+  ]
+}
