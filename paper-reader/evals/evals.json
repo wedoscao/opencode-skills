@@ -1,0 +1,81 @@
+{
+  "skill_name": "paper-reader",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "What do you make of this study? Is the conclusion justified?\n\nTitle: Coffee consumption and incidence of cardiovascular disease: a cross-sectional survey of 214 adults\n\nAbstract: Cardiovascular disease (CVD) is the leading cause of death worldwide. We surveyed 214 adults recruited from a single suburban shopping mall, asking them to self-report their daily coffee intake over the past month and whether they had ever been diagnosed with CVD. We found that participants who drank three or more cups of coffee per day were significantly less likely to report a CVD diagnosis than those who drank none (p = 0.03). Our findings demonstrate that coffee consumption prevents cardiovascular disease. We recommend that adults drink at least three cups of coffee daily to reduce their risk of heart disease.\n\nMethods excerpt: Coffee intake was assessed by a single self-report question. CVD status was self-reported. No adjustment was made for age, smoking, diet, exercise, or socioeconomic status. Participants were recruited by convenience sampling.",
+      "expected_output": "Summarizes the study and critiques it: identifies that this is cross-sectional/self-reported data, so the causal claim ('coffee prevents CVD') is not justified; flags the lack of adjustment for confounders (age, smoking, diet, exercise, SES), convenience sampling, and the self-report measurement as threats to validity. Separates what the paper says (causal claim) from what it shows (an association in a small, unadjusted sample). Does not fabricate statistics.",
+      "files": [],
+      "assertions": [
+        { "text": "Flags that the causal claim ('coffee prevents CVD') is not justified by the cross-sectional, observational design" },
+        { "text": "Identifies the lack of adjustment for confounders (age, smoking, diet, exercise, socioeconomic status)" },
+        { "text": "Notes the weaknesses of convenience sampling and self-reported measurement" },
+        { "text": "Separates what the study claims (causation) from what it shows (association)" },
+        { "text": "Does not fabricate or invent statistics beyond what the source states" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Can you pull the key details out of this trial into a clean summary?\n\nTitle: Effect of a 12-week mindfulness intervention on workplace burnout: a randomized controlled trial\n\nAbstract: Burnout is a growing occupational health problem. We conducted a randomized controlled trial of 180 employees (90 intervention, 90 waitlist control) at two technology firms. The intervention group completed a 12-week app-based mindfulness program; the control group received no treatment. The primary outcome was the Maslach Burnout Inventory (MBI) emotional exhaustion subscale at 12 weeks. We observed a significant reduction in emotional exhaustion in the intervention group relative to control (mean difference -4.2 points, 95% CI -6.8 to -1.6, p = 0.002), with a between-group effect size of d = 0.42. Attrition was 18% overall. The study was funded by the company that developed the mindfulness app, and one author is an employee of that company. The trial was not pre-registered.",
+      "expected_output": "Extracts the key details into a structured summary: citation/title, research question, study design (RCT), population (N=180 employees at two tech firms, 90/90), methods (12-week app-based mindfulness vs waitlist), key result with exact numbers (mean difference -4.2, 95% CI -6.8 to -1.6, p=0.002, d=0.42), attrition 18%, and flags funding/COI (app developer) and lack of pre-registration. Numbers quoted accurately, not rounded away.",
+      "files": [],
+      "assertions": [
+        { "text": "Reports the exact result numbers: mean difference -4.2, 95% CI -6.8 to -1.6, p = 0.002" },
+        { "text": "Reports the between-group effect size d = 0.42" },
+        { "text": "Reports sample size N=180 and design (RCT, 90 intervention / 90 waitlist)" },
+        { "text": "Reports attrition (18%)" },
+        { "text": "Flags funding/conflict of interest (app developer) and lack of pre-registration" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "My mom sent me this abstract and asked what it means. Explain it in plain English.\n\nAbstract: β-thalassemia is a monogenic blood disorder caused by reduced β-globin synthesis. We demonstrate that disruption of the erythroid-specific BCL11A enhancer via CRISPR-Cas9-mediated non-homologous end joining in CD34+ hematopoietic stem and progenitor cells (HSPCs) leads to sustained derepression of fetal hemoglobin (HbF). Edited HSPCs engrafted in immunodeficient mice and gave rise to erythroid progeny expressing HbF at levels predicted to ameliorate disease. Long-term multilineage reconstitution was maintained without detectable off-target editing or loss of stemness. These results support the clinical translation of gene-edited autologous HSPC transplantation as a durable cure for β-thalassemia.",
+      "expected_output": "Explains in plain language: β-thalassemia is an inherited blood disease from a broken globin gene; the technique uses CRISPR gene editing to snip a specific DNA switch in blood stem cells, which turns back on fetal hemoglobin (a form of hemoglobin the body usually stops making); the edited cells survived and made enough healthy hemoglobin in mice; no dangerous off-target edits were seen. Uses analogies, defines jargon (CRISPR, HSPCs, HbF, engraftment), and states a one-sentence lay takeaway. Avoids overclaiming (notes it's tested in mice, 'supports clinical translation' rather than proven cure in people).",
+      "files": [],
+      "assertions": [
+        { "text": "Explains β-thalassemia in plain language (an inherited blood disorder)" },
+        { "text": "Explains CRISPR/Cas9 gene editing in plain language" },
+        { "text": "Explains what fetal hemoglobin (HbF) is and why reactivating it helps" },
+        { "text": "Avoids overclaiming: notes the result is from mice / 'supports clinical translation', not a proven human cure" },
+        { "text": "Provides a plain-language one-sentence takeaway" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I've got this paper as a PDF. Can you read it and tell me the key findings, and how strong the evidence is? The file is at /home/wedoscao/.config/opencode/skills/paper-reader/evals/fixtures/stair_climbing_trial.pdf",
+      "expected_output": "Extracts text from the PDF, then reports the key result (mean difference -3.1 bpm, 95% CI -5.4 to -0.8, p = 0.009, d = 0.38), the design (RCT, N=64, 32/32, 6-week stair climbing), and adherence 82%. Assesses the evidence: randomized and pre-registered are strengths; short follow-up, self-reported adherence, and healthy-office-worker sample limit generalizability. Indicates it read the PDF and does not fabricate numbers.",
+      "files": ["evals/fixtures/stair_climbing_trial.pdf"],
+      "assertions": [
+        { "text": "Reports the key result numbers: mean difference -3.1 bpm, 95% CI -5.4 to -0.8, p = 0.009" },
+        { "text": "Reports the design (RCT) and sample (N=64, 32/32) and intervention (6-week stair climbing)" },
+        { "text": "Reports effect size d = 0.38 and adherence 82%" },
+        { "text": "Notes limitations (short follow-up, self-reported adherence, healthy office workers / generalizability)" },
+        { "text": "Indicates it read the PDF as the source and does not fabricate numbers" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Summarize the key contribution of this paper: https://arxiv.org/abs/2610.22350",
+      "expected_output": "Fetches the arXiv page and summarizes the paper. Identifies it as 'FDE-Gym: The Last Mile of AI Delivery', a benchmark for forward-deployed-engineer (FDE) style delivery tasks. Reports the scope (95 end-to-end delivery tasks from 20 customer scenarios across 18 sectors) and the headline finding (best model scores a mean of 0.56 and resolves only 14 of 95 tasks; discovering unstated constraints is the primary bottleneck). These specific numbers require an actual fetch — they cannot be produced from memory. Honest about its source.",
+      "files": [],
+      "assertions": [
+        { "text": "Retrieves and identifies the paper ('FDE-Gym', a benchmark for forward-deployed-engineer / AI delivery tasks)" },
+        { "text": "Reports the benchmark scope from the abstract: 95 tasks, 20 scenarios, 18 sectors" },
+        { "text": "Reports the headline result: best model scores 0.56 and resolves 14 of 95 tasks, with unstated-constraint discovery as the bottleneck" },
+        { "text": "Honestly documents its source and access level (e.g. notes whether it used the arXiv abstract page or the full text)" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I found these two papers on coffee and health. How do their findings compare, and which should I trust more?\n\nPaper A — Coffee consumption and incidence of cardiovascular disease: a cross-sectional survey of 214 adults. We surveyed 214 adults from a single suburban shopping mall, asking them to self-report daily coffee intake and whether they had ever been diagnosed with CVD. Those drinking 3+ cups/day were less likely to report a CVD diagnosis than those drinking none (p = 0.03). No adjustment was made for age, smoking, diet, exercise, or socioeconomic status.\n\nPaper B — Coffee consumption and all-cause mortality: a prospective cohort study of 121,700 adults. We assessed coffee intake by validated food-frequency questionnaire at baseline and followed participants for mortality over 10 years, adjusting for age, sex, smoking, body mass index, physical activity, and diet. Higher coffee consumption was associated with modestly lower all-cause mortality (hazard ratio 0.88, 95% CI 0.84 to 0.92, for 3+ cups/day vs. none, p < 0.001). The association was consistent across subgroups. As an observational study, residual confounding cannot be fully excluded.",
+      "expected_output": "Compares the two studies rather than summarizing each in isolation: Paper A is cross-sectional (snapshot, can't establish temporal order, unadjusted), Paper B is a prospective cohort (follows people over time, adjusts for confounders, larger sample). Concludes Paper B is stronger evidence for an association, while noting both are observational and neither proves causation; Paper B's residual-confounding caveat is noted. Attributes each number (HR 0.88 vs p = 0.03) to its correct paper.",
+      "files": [],
+      "assertions": [
+        { "text": "Compares the two studies directly rather than summarizing each in isolation" },
+        { "text": "Notes the design difference (cross-sectional vs prospective cohort) and why it matters for causal strength" },
+        { "text": "Concludes the cohort study (Paper B) is stronger evidence, citing sample size / adjustment / temporal ordering" },
+        { "text": "Attributes each finding and number to the correct paper without merging them" }
+      ]
+    }
+  ]
+}
