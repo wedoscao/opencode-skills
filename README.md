@@ -12,6 +12,7 @@ A collection of [opencode](https://opencode.ai) skills.
 | [`paper-reader`](paper-reader/SKILL.md) | Reads, summarizes, critiques, and extracts structured information from scientific papers, and explains them in plain language. Handles PDFs, arXiv/DOI/PubMed links, and pasted text, and compares multiple papers. |
 | [`scientific-researcher`](scientific-researcher/SKILL.md) | Researches a scientific question end-to-end: searches for and discovers literature, evaluates source quality and evidence strength, and synthesizes findings into a cited summary or literature review. |
 | [`skill-creator`](skill-creator/SKILL.md) | Creates new skills, modifies and improves existing ones, and measures skill performance via evals and benchmarks. |
+| [`vietnamese-translator`](vietnamese-translator/SKILL.md) | Translates text into fluent Vietnamese while keeping technical terms, code identifiers, and product names in English, preserving Markdown and code formatting. |
 
 Each skill directory contains a `SKILL.md` with its instructions. Skills that
 ship evals also include an `evals/evals.json` fixture file.
@@ -28,6 +29,7 @@ cp -r /tmp/opencode-skills/brainstorming \
       /tmp/opencode-skills/paper-reader \
       /tmp/opencode-skills/scientific-researcher \
       /tmp/opencode-skills/skill-creator \
+      /tmp/opencode-skills/vietnamese-translator \
       ~/.config/opencode/skills/
 ```
 
