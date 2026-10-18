@@ -1,0 +1,23 @@
+{
+  "skill_name": "git-commits-prs",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I fixed the login endpoint so it uses parameterized queries instead of string interpolation — it was vulnerable to SQL injection. What should my commit message be?",
+      "expected_output": "A Conventional Commit message, imperative subject, with a type (fix) and scope (auth/login), a short body explaining the SQL-injection fix, and the exact git commit command. No trailing period, no 'fixed' in the subject.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I added rate limiting to the login endpoint using Flask-Limiter, throttling to 5 attempts per minute per IP. Commit it and open a PR for me.",
+      "expected_output": "A Conventional Commit (feat, scope auth/login), plus a PR title mirroring the commit subject and a brief description with What/Why/Testing, plus exact git and `gh pr create` commands. Does not run anything without asking.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I've got a bunch of changes staged: I renamed get_user() to fetch_user() across the whole codebase, removed the old /v1 API endpoint, and added tests for the new function. How should I split and commit these?",
+      "expected_output": "Proposes splitting into logical commits (e.g. rename as refactor, /v1 removal as a breaking change with `!` and BREAKING CHANGE footer, tests as test), with a concrete message for each and git add commands for the relevant paths.",
+      "files": []
+    }
+  ]
+}

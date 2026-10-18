@@ -1,0 +1,23 @@
+{
+  "skill_name": "code-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Can you take a look at this function? It's supposed to return the first index in a sorted list where the value is >= target (or len(arr) if none exist), but it's hanging on some inputs.\n\n```python\ndef lower_bound(arr, target):\n    lo, hi = 0, len(arr)\n    while lo < hi:\n        mid = (lo + hi) // 2\n        if arr[mid] < target:\n            lo = mid\n        else:\n            hi = mid\n    return lo\n```",
+      "expected_output": "Finds the infinite loop (lo = mid should be lo = mid + 1), explains why it loops when arr[mid] < target and hi == lo + 1, and gives the corrected line. Uses the structured report format with at least a Blocker finding.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Is this login endpoint safe? It's part of our Flask app.\n\n```python\n@app.route('/login', methods=['POST'])\ndef login():\n    username = request.form['username']\n    password = request.form['password']\n    query = f\"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'\"\n    row = db.execute(query).fetchone()\n    if row:\n        session['user'] = row['username']\n        return 'ok'\n    return 'invalid credentials', 401\n```",
+      "expected_output": "Flags the SQL injection (string interpolation into query), plaintext password comparison, and lack of parameterized queries / hashing. Reports them as Blocker/Major with a concrete fix. Structured report format.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Review this PR. It adds a retry helper and uses it in our API client.\n\n```diff\n+def fetch_with_retry(url, retries=3):\n+    for attempt in range(retries):\n+        try:\n+            return requests.get(url, timeout=5)\n+        except Exception:\n+            continue\n+    raise RuntimeError('all retries failed')\n+\n def get_user(user_id):\n-    return requests.get(f\"{API}/users/{user_id}\", timeout=5).json()\n+    return fetch_with_retry(f\"{API}/users/{user_id}\").json()\n```",
+      "expected_output": "Identifies: broad `except Exception` swallowing real errors, no backoff between retries, retrying non-idempotent/read-only is fine but notes it retries on parse errors too, losing the original error in RuntimeError, and that .json() failure isn't retried. Structured report with severity levels.",
+      "files": []
+    }
+  ]
+}
