@@ -1,0 +1,112 @@
+{
+  "thesis": {
+    "label": "Đồ án / Khóa luận tốt nghiệp",
+    "months_default": 5,
+    "contributions": 1,
+    "baselines": 2,
+    "datasets": 1,
+    "ablations": "1–2",
+    "seeds": 3,
+    "stats": false,
+    "pages": "30–50 trang báo cáo",
+    "review": "GVHD + hội đồng",
+    "deliverables": ["Báo cáo", "Demo chạy được", "Slide + q&A"],
+    "gates": [
+      "Tái lập được ≥2 baseline trong ±1 điểm so với paper gốc",
+      "Kết quả chính ổn định qua ≥3 seed",
+      "Demo chạy end-to-end không cần can thiệp tay"
+    ]
+  },
+  "conf-domestic": {
+    "label": "Hội nghị trong nước (KSE, SoICT, …)",
+    "months_default": 6,
+    "contributions": 1,
+    "baselines": 3,
+    "datasets": 2,
+    "ablations": "2–3",
+    "seeds": 3,
+    "stats": true,
+    "pages": "6–8 trang (IEEE format)",
+    "review": "2–3 reviewer, 1 vòng rebuttal",
+    "deliverables": ["Camera-ready 6–8 trang", "Code + README", "Poster/slide"],
+    "gates": [
+      "Có kết quả vượt baseline rõ ràng (không chỉ hòa)",
+      "Ablation chứng minh từng thành phần đều có tác dụng",
+      "Bảng kết quả đủ để reviewer không hỏi 'so với SOTA thì sao'"
+    ]
+  },
+  "conf-intl": {
+    "label": "Hội nghị quốc tế A/A*",
+    "months_default": 12,
+    "contributions": 2,
+    "baselines": 5,
+    "datasets": 3,
+    "ablations": "3–5",
+    "seeds": 5,
+    "stats": true,
+    "pages": "8–10 trang + supplementary",
+    "review": "3–4 reviewer, thường 2 vòng",
+    "deliverables": ["Full paper", "Code + checkpoint", "Supplementary + reproducibility statement"],
+    "gates": [
+      "Vượt ≥3 baseline mạnh trên ≥3 dataset",
+      "Phân tích lỗi chỉ ra được khi nào phương pháp thất bại",
+      "Kiểm định thống kê qua ≥5 seed",
+      "Code chạy lại được từ repo sạch"
+    ]
+  },
+  "journal-q1q2": {
+    "label": "Tạp chí Q1–Q2",
+    "months_default": 12,
+    "contributions": 2,
+    "baselines": 5,
+    "datasets": 3,
+    "ablations": "3–5",
+    "seeds": 5,
+    "stats": true,
+    "pages": "12–20 trang",
+    "review": "2–4 reviewer, 4–8 tháng",
+    "deliverables": ["Manuscript", "Cover letter", "Response-to-reviewers", "Code/data statement"],
+    "gates": [
+      "Đóng góp mở rộng được so với hội nghị (nếu có bản hội nghị trước)",
+      "Calibration/robustness/cross-dataset được đo, không chỉ accuracy",
+      "Mỗi claim trong abstract đều có bảng hoặc hình chống lưng",
+      "Tái lập được trên máy thứ hai"
+    ]
+  },
+  "journal-q3q4": {
+    "label": "Tạp chí Q3–Q4",
+    "months_default": 8,
+    "contributions": 1,
+    "baselines": 3,
+    "datasets": 2,
+    "ablations": "1–2",
+    "seeds": 3,
+    "stats": false,
+    "pages": "10–14 trang",
+    "review": "2 reviewer, 2–5 tháng",
+    "deliverables": ["Manuscript", "Response-to-reviewers"],
+    "gates": [
+      "Ứng dụng có người dùng/ngữ cảnh thật, không chỉ benchmark",
+      "So sánh công bằng với ít nhất 1 phương pháp phổ biến",
+      "Hạn chế được viết thẳng thắn, không giấu"
+    ]
+  },
+  "grant": {
+    "label": "Đề tài NCKH / grant",
+    "months_default": 12,
+    "contributions": 2,
+    "baselines": 3,
+    "datasets": 2,
+    "ablations": "2–3",
+    "seeds": 3,
+    "stats": false,
+    "pages": "10–15 trang proposal",
+    "review": "hội đồng xét duyệt",
+    "deliverables": ["Proposal", "Kế hoạch milestone", "Bảng ngân sách", "Sản phẩm cam kết"],
+    "gates": [
+      "Mỗi mục tiêu có sản phẩm đo được (bài báo, dataset, phần mềm)",
+      "Ngân sách khớp với khối lượng thực nghiệm",
+      "Rủi ro chính có phương án dự phòng"
+    ]
+  }
+}

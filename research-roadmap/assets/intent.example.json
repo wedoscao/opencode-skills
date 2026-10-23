@@ -1,0 +1,11 @@
+{
+  "direction": "Đánh giá độ tin cậy của LLM tiếng Việt trong miền y tế",
+  "question": "LLM tiếng Việt tự tin sai ở đâu, và có thể phát hiện bằng tín hiệu nội tại không?",
+  "months": 9,
+  "start": "2026-11-02",
+  "target": "journal-q1q2",
+  "compute": "1x RTX 3090 (thuê theo giờ)",
+  "data": "công khai + cần xin phép cho dữ liệu bệnh viện",
+  "level": "đã train model, chưa có bài quốc tế",
+  "library": "~/Documents/Research/Papers/02-AI-y-te-dang-tin-cay"
+}

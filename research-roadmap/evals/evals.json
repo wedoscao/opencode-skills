@@ -1,0 +1,23 @@
+{
+  "skill_name": "research-roadmap",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Mình năm 4, còn 5 tháng là bảo vệ KLTN, muốn làm về phát hiện deepfake tiếng Việt. Có 1 GPU 3090 và thư viện paper ở ~/Documents/Research/Papers. Lập kế hoạch giúp mình.",
+      "expected_output": "Profile thesis, 5-month sprint plan with gates, gap table filled from the library, 2 baselines, explicit risks, no Q1 claims.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Tôi muốn nộp một bài Q2 về calibration của mô hình y tế trên dữ liệu VinDr. Còn 12 tháng, có GPU, chưa từng publish. Cho tôi roadmap và danh sách tạp chí nên nhắm.",
+      "expected_output": "journal-q1q2 profile, 12-month plan, 5 baselines/3 datasets/5 seeds, venue shortlist with ISSN+APC via venue_check, explicit quartile caveat.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Viết đề cương đề tài NCKH cấp trường về neuro-symbolic reasoning trên knowledge graph thời gian, 12 tháng, kinh phí 50 triệu.",
+      "expected_output": "grant profile, proposal with measurable deliverables and budget, milestone gates, risks, no fabricated results.",
+      "files": []
+    }
+  ]
+}
