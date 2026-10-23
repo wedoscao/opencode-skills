@@ -1,0 +1,12 @@
+{
+  "01-llm-evaluation": {
+    "title": "Hướng 1 — Đánh giá & độ tin cậy của LLM",
+    "goal": "Mục tiêu: benchmark hallucination–calibration cho tiếng Việt, kèm mitigation nhẹ.",
+    "reading_path": "survey khung đánh giá → benchmark thiết kế → phương pháp đo → baseline tiếng Việt"
+  },
+  "02-medical-imaging": {
+    "title": "Hướng 2 — AI y tế đáng tin cậy",
+    "goal": "Mục tiêu: cross-hospital generalization + calibration trên dữ liệu Việt Nam.",
+    "reading_path": "dataset → chuẩn so sánh quốc tế → cách đo uncertainty → lỗi shortcut cần tránh"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "skill_name": "paper-library",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "Tôi đang làm KLTN về phát hiện deepfake tiếng Việt, cần tầm 8 bài đọc trước. Tải PDF về <out>/Papers, ưu tiên bài trên Scopus với Web of Science, chia thư mục theo hướng.",
+      "expected_output": "8 verified PDFs in subfolders, DOIs recorded, honest note on anything unobtainable, quartile claims hedged.",
+      "assertions": [
+        "At least 6 PDFs delivered",
+        "Every .pdf is a real PDF (not an HTML challenge page)",
+        "Every PDF matches its cited title",
+        "Organised in subfolders with DOIs recorded",
+        "Reports honestly what could not be obtained",
+        "Quartile claims hedged or omitted",
+        "No arXiv-only preprints posing as peer-reviewed work"
+      ],
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "gom giúp mình tài liệu tham khảo cho 3 hướng: nén mô hình LLM, learning analytics, và neuro-symbolic reasoning trên knowledge graph. Mỗi hướng 5 bài mới nhất, bài nào không open access thì ghi DOI lại cho mình.",
+      "expected_output": "Three folders, ~5 papers each, no duplicates, access status documented, mostly peer-reviewed.",
+      "assertions": [
+        "Three direction folders created",
+        "Each folder has at least 3 PDFs",
+        "Every .pdf is a real PDF",
+        "No duplicate files",
+        "Access status documented (paywalled DOIs or explicit all-OA)",
+        "No arXiv-only preprints posing as peer-reviewed work"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Thư viện paper của mình ở <out>/Papers, hình như có gì đó không ổn. Kiểm tra và sửa giúp mình, chiều nay họp nhóm cần dùng rồi.",
+      "expected_output": "Proactively verifies every file (magic bytes + page-1 title), fixes the HTML-as-PDF and the mislabelled paper, reports per-file actions.",
+      "assertions": [
+        "Identifies the fake PDF (HTML saved as .pdf)",
+        "Identifies the mislabelled paper",
+        "No invalid .pdf remains in the library",
+        "Reports a per-file action",
+        "Does not silently delete"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Mình có sẵn list 12 DOI cho phần related work, tải PDF về <out>/Papers. Bài nào không lấy được PDF thì ghi DOI lại, đừng bỏ qua.",
+      "expected_output": "9+ of 12 obtained, zero HTML-as-PDF, zero files that match no requested DOI, missing DOIs documented, machine-readable log.",
+      "assertions": [
+        "At least 8 of 12 DOIs obtained with a valid PDF",
+        "No HTML challenge page saved as .pdf",
+        "No PDF that matches none of the 12 citations",
+        "Every missing DOI is reported to the user",
+        "No duplicate files",
+        "Writes a machine-readable log/manifest",
+        "Recovers the gold-OA paper whose publisher blocks bots (IET/Wiley)"
+      ],
+      "files": [
+        "plan.txt"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Thư viện 60 bài của mình ở <out>/Papers. Mai mình phải gửi danh sách tài liệu cho GVHD nên cần chắc chắn mọi file đều dùng được. Kiểm tra giúp mình.",
+      "expected_output": "Finds the 197-byte HTML page and the truncated PDF, quarantines without deleting, keeps the rest usable, reports per-file actions, notes that the download log is not trustworthy.",
+      "assertions": [
+        "Finds the HTML page disguised as a PDF",
+        "Finds the truncated/corrupt PDF",
+        "Library stays usable (>=55 valid PDFs)",
+        "No broken PDF left in the library",
+        "Reports a per-file action",
+        "Updates the machine-readable log/manifest"
+      ],
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "dir": "01-llm-evaluation",
+    "doi": "10.1145/3641289",
+    "note": "Khung đánh giá LLM: what/where/how to evaluate"
+  },
+  {
+    "dir": "01-llm-evaluation",
+    "doi": "10.18653/v1/2022.acl-long.229",
+    "note": "Thiết kế benchmark độ trung thực"
+  },
+  {
+    "dir": "02-medical-imaging",
+    "doi": "10.1038/s41597-022-01498-w",
+    "note": "Dataset X-quang người Việt, lợi thế bản địa"
+  },
+  {
+    "dir": "02-medical-imaging",
+    "doi": "10.1109/tmi.2020.3006437",
+    "note": "Calibration + uncertainty cho segmentation"
+  }
+]
