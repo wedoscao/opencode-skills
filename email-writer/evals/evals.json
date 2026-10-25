@@ -1,0 +1,29 @@
+{
+  "skill_name": "email-writer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write an email to my manager asking to work from home on Friday because the building will have maintenance and I have a deadline. Keep it polite but not overly formal.",
+      "expected_output": "A ready-to-send email with subject, greeting, body, and sign-off, in a polite but neutral-professional tone. Two or three distinct options.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "My client just sent me: 'Hi, can you send over the revised proposal by end of week? Also do you have an updated timeline for the launch?' — help me reply.",
+      "expected_output": "A reply email (Re: subject) that answers both asks — the proposal and the timeline — in a client-appropriate tone. Should not invent dates; use placeholders where unknown.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Soạn giúp mình email bằng tiếng Việt gửi cho khách hàng để xin lỗi vì giao hàng trễ và đề nghị giảm giá 10% cho đơn sau.",
+      "expected_output": "A Vietnamese email with correct diacritics, appropriate formal greeting/sign-off (Kính gửi / Trân trọng), apologizing for the late delivery and offering 10% off, in a measured tone.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I wrote this but it sounds too stiff and robotic, can you make it friendlier and shorter: 'I am writing to inform you that the meeting has been rescheduled to 3pm on Tuesday. Please be advised that the agenda will be distributed prior to the meeting. Your attendance is requested.'",
+      "expected_output": "A friendlier, shorter rewrite preserving the facts (rescheduled to 3pm Tuesday, agenda sent beforehand, attendance requested), without the stiff legal-sounding phrases.",
+      "files": []
+    }
+  ]
+}
