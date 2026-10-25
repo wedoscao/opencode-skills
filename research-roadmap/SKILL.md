@@ -91,6 +91,8 @@ The roadmap is finished when a reader can answer all of these without asking you
 
 If any answer is missing, the file is a template, not a plan.
 
+Gate it mechanically before handing over: `python scripts/check_plan.py --dir ./roadmap [--target <key>] [--library <papers-root>]`. It fails on leftover `TODO`s, an unfilled RQ1, too few baselines/datasets for the target, an empty venue table, and a missing falsification criterion — the same checklist as above, checked by a script instead of eyeballing.
+
 ## Honest limits
 
 - **Quartile cannot be verified here.** Scopus/JCR are subscription sources that change yearly. `venue_check.py` checks ISSN, publisher, DOAJ and APC only.
@@ -106,6 +108,7 @@ If any answer is missing, the file is a template, not a plan.
 | `scripts/timeline.py` | Sprint table with gates from a month budget |
 | `scripts/scoop_check.py` | Recent Crossref + arXiv work ranked by title overlap |
 | `scripts/venue_check.py` | ISSN, publisher, DOAJ status, APC; explicit about what it cannot check |
+| `scripts/check_plan.py` | Definition-of-done gate: TODOs, RQ1, baseline/dataset counts, falsification, risks |
 
 ## Worked example
 
