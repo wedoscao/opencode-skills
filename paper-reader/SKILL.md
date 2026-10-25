@@ -15,6 +15,15 @@ The abstract alone is not enough for a critique or an extraction — it is the a
 
 Start your answer by stating what you actually read and what you couldn't — for example "based on the abstract only" or "based on the full text."
 
+**Use the bundled script to acquire the text** rather than re-deriving the access logic by hand:
+
+```bash
+python scripts/fetch_source.py <pdf-path | DOI | arXiv-id | PubMed-id | URL> \
+  --out fulltext.txt --meta meta.json
+```
+
+It extracts the text and reports honestly what was readable — page count, whether a PDF is scanned/image-only (no text layer), or whether only an abstract was available for a paywalled DOI. Critique from `fulltext.txt`, and state your access level from `meta.json` (the "what I read vs. couldn't" line the skill requires).
+
 - **PDF file**: extract the text (e.g. `pdftotext`, or a PDF-reading capability). Note explicitly when figures, tables, or equations could not be read, since those often hold the real results. If the PDF is a scanned/image-only document and no text comes out, say so — do not guess at content you cannot read; suggest OCR or ask for an accessible version.
 - **Link / DOI**:
   - arXiv: `https://arxiv.org/abs/<id>` → fetch the abstract page or `https://arxiv.org/pdf/<id>` for full text.
