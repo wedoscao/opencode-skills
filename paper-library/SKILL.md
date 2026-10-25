@@ -53,6 +53,8 @@ Four rules that keep the library honest:
 1. **Quartile is an estimate, not a fact.** SJR and JCR reassign quartiles yearly and by category. Write "ước tính" and tell the user to re-check Scopus Sources / JCR before submission. Never state a Q2 as guaranteed.
 2. **SCIE/ESCI is not the same as Scopus.** Say which one you mean, or say both only when both are true.
 3. **A preprint is not the article.** If the PDF came from arXiv but the paper is published, keep the official DOI and label the file as the preprint of the published version. To tell the two apart, query `export.arxiv.org/api/query?id_list=<id>` and look for `<arxiv:journal_ref>` or `<arxiv:doi>`; if both are absent, search the arXiv title on Crossref and accept a published record only at ≥0.9 title similarity. Quoting an unpublished preprint as if it were peer-reviewed is the single fastest way to lose a reviewer's trust.
+
+   This check is scripted: `python scripts/check_preprint.py --arxiv <id>` (or `--title "<title>"`) reads the arXiv record's `journal_ref`/`doi`, falls back to a Crossref title match at ≥0.9, and prints a verdict (`published` / `preprint-only`) plus the matched record. `fetch_pdfs.py` also marks a `preprint` flag and `oa_status` in its log/manifest, so the final report can state which files are arXiv stand-ins.
 4. **Predatory-adjacent venues** (very fast review, high APC, obscure publisher) should be flagged or dropped, not silently included.
 
 ### 4. Acquire open-access PDFs with a fallback ladder
@@ -83,10 +85,12 @@ python scripts/fetch_pdfs.py --plan plan.json --root ~/Documents/Research/Papers
 A library of mislabeled PDFs is worse than no library, because the user will cite the wrong paper.
 
 ```bash
-python scripts/verify_library.py --root ~/Documents/Research/Papers --manifest download-log.json
+python scripts/verify_library.py --root ~/Documents/Research/Papers --log download-log.json
 ```
 
 It checks: `%PDF` magic, page count, file size, duplicate hashes, and token overlap between the Crossref title and the text extracted from page 1. Investigate every row it flags before reporting success.
+
+To leave the library usable rather than just diagnosed, run it with `--quarantine` (moves bad PDFs and duplicate extras into `root/_quarantine`) and `--update-log` (rewrites the log so those records read `quarantined` instead of `ok`).
 
 Trust page 1 over the DOI. Publisher metadata can be correct while the PDF served at that DOI is a different article: a real case had a Crossref record titled "Vietnamese Spoofing-aware Verification Challenge" whose PDF was a paper on voice conversion. Only the text on page 1 catches that, and only if you compare it to the citation you are about to write.
 
@@ -150,6 +154,7 @@ Do not claim a paper is indexed in Scopus/WoS unless the venue genuinely is. If 
 | `scripts/resolve_candidates.py` | Titles → verified DOI, venue, year, similarity score (Crossref) |
 | `scripts/fetch_pdfs.py` | DOI plan → PDFs via Unpaywall → publisher → arXiv → Wayback, with manifest |
 | `scripts/verify_library.py` | Magic bytes, page counts, duplicates, title-vs-page-1 match |
+| `scripts/check_preprint.py` | Preprint vs published: arXiv journal_ref/doi + Crossref ≥0.9 title match |
 | `scripts/build_docs.py` | Per-folder README + root INDEX + manifest from log and curation |
 
 All scripts take `--help`; none hardcode paths or user identities.

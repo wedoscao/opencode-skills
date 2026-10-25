@@ -69,7 +69,7 @@ def main():
     ap.add_argument("--container", help="Journal name hint; also restricts results to journal articles")
     ap.add_argument("--from-year", type=int, help="Drop anything published before this year")
     ap.add_argument("--rows", type=int, default=5, help="Candidates to inspect per query (default 5)")
-    ap.add_argument("--mailto", default="paper-library@example.com", help="Contact email for Crossref's polite pool")
+    ap.add_argument("--mailto", default=None, help="Contact email for Crossref's polite pool (optional)")
     ap.add_argument("--out", help="Write JSON results here")
     args = ap.parse_args()
 

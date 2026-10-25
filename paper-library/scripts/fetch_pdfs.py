@@ -99,6 +99,15 @@ def unpaywall_pdfs(doi, mailto):
     return list(dict.fromkeys(urls))
 
 
+def unpaywall_info(doi, mailto):
+    """Return (oa_status, license) for a DOI, so 'blocked' can be told apart from 'paywalled'."""
+    try:
+        data = get_json(f"https://api.unpaywall.org/v2/{urllib.parse.quote(doi)}?email={mailto}")
+    except Exception:
+        return None, None
+    return data.get("oa_status"), data.get("license")
+
+
 def arxiv_pdf(title):
     for query in (f'ti:"{title}"', f'all:"{title}"'):
         try:
@@ -206,7 +215,8 @@ def main():
             print(f"skip {doi} (already downloaded)")
             continue
         rec = {"dir": item.get("dir", "papers"), "doi": doi, "note": item.get("note", ""),
-               "status": "failed", "file": None, "src": None, "meta": None}
+               "status": "failed", "file": None, "src": None, "meta": None,
+               "oa_status": None, "license": None, "preprint": False}
         try:
             cr = crossref(doi, args.mailto)
             landing = ((cr.get("resource") or {}).get("primary") or {}).get("URL")
@@ -217,6 +227,7 @@ def main():
                 "author": ((cr.get("author") or [{}])[0].get("family") or "Anon"),
             }
             rec["meta"] = meta
+            rec["oa_status"], rec["license"] = unpaywall_info(doi, args.mailto)
             blob, src = acquire(doi, meta["title"], args.mailto, landing)
             if blob:
                 outdir = os.path.join(args.root, rec["dir"])
@@ -224,7 +235,8 @@ def main():
                 path = os.path.join(outdir, safe_name(meta["author"], meta["year"], meta["title"]))
                 with open(path, "wb") as f:
                     f.write(blob)
-                rec.update(status="ok", file=os.path.relpath(path, args.root), src=src)
+                rec.update(status="ok", file=os.path.relpath(path, args.root), src=src,
+                           preprint=bool(src and "arxiv.org/pdf" in src))
             else:
                 rec.update(status="paywalled")
         except Exception as e:
@@ -238,11 +250,12 @@ def main():
 
     with open(manifest_path, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
-        w.writerow(["Folder", "DOI", "Title", "Venue", "Year", "PDF", "Source URL", "Status"])
+        w.writerow(["Folder", "DOI", "Title", "Venue", "Year", "PDF", "Source URL", "OA status", "Preprint", "Status"])
         for r in records:
             m = r.get("meta") or {}
             w.writerow([r.get("dir", ""), r["doi"], m.get("title", ""), m.get("venue", ""),
                         m.get("year", ""), r.get("file") or "", r.get("src") or "",
+                        r.get("oa_status") or "", "yes" if r.get("preprint") else "",
                         "OK" if r["status"] == "ok" else "needs library access"])
 
     ok = sum(1 for r in records if r["status"] == "ok")
