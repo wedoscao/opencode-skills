@@ -33,6 +33,15 @@ Search several sources, not one, because no single database covers everything an
 | Google Scholar | Broadest, includes citations and gray literature | no API — use web search or fetch results pages |
 | General web search | Guidelines, registries (ClinicalTrials.gov), systematic review databases (Cochrane) | websearch |
 
+**Prefer the bundled scripts over hand-built URLs.** Query every source, dedupe by DOI/title, and keep the provenance you must report, in one call:
+
+```bash
+python scripts/search_literature.py --query "<query 1>" --query "<query 2>" \
+  --sources pubmed,arxiv,semanticscholar,crossref --out results.json
+```
+
+`results.json` records the exact queries, sources, and timestamp (so the report's "search log" is reproducible), and merges the hits into one de-duplicated table with DOI / year / venue / OA status / abstract. Keep the raw `--query` strings you used so you can report them.
+
 **Build good queries.** Use specific terms, synonyms, and Boolean operators where the source supports them. Start narrow, then broaden. Keep a note of the exact queries and sources you used so you can report them.
 
 **Get coverage, not just recency.** For a credible answer you need, at minimum:
@@ -42,7 +51,13 @@ Search several sources, not one, because no single database covers everything an
 - **The strongest evidence** — systematic reviews and meta-analyses first, then primary studies.
 - **Opposing or null findings** — actively look for evidence against the headline claim; do not stop at the first confirming results.
 
-**Snowball from the best papers.** Take a high-quality, on-topic paper and look at both its references (backward) and papers that cite it (forward, via Semantic Scholar or Google Scholar). This reliably surfaces the relevant cluster of work faster than keyword search alone.
+**Snowball from the best papers.** Take a high-quality, on-topic paper and look at both its references (backward) and papers that cite it (forward). This reliably surfaces the relevant cluster of work faster than keyword search alone.
+
+```bash
+python scripts/snowball.py --doi <seed-doi> --query "<the question>" --out snowball.json
+```
+
+It pulls the seed's references and citations from Semantic Scholar in one call and ranks them by overlap with your question, so you read the on-topic neighbours first instead of a flat list.
 
 ## 2. Evaluate sources and evidence strength
 
