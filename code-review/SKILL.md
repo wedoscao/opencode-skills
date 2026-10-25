@@ -16,6 +16,8 @@ Review code the way a thoughtful, senior engineer would: read carefully, underst
 
 Work through these layers in order. Stop going deeper once the change is clearly understood; don't pad the review to look thorough.
 
+Gather context first: `python scripts/collect_context.py --repo <repo> [--base main] --out bundle.md` produces each changed file's diff with line numbers and context, and a guess at the repo's test/lint commands. Review from that bundle and cite the file:line it shows, instead of re-running `git diff` by hand.
+
 1. **Understand the intent.** What is this code supposed to do? Read any accompanying description, surrounding functions, and callers. If the intent is unclear, note it as a question rather than guessing.
 2. **Correctness.** Trace the logic against the intent. Look for off-by-one errors, inverted conditions, wrong variable use, missing cases, race conditions, and incorrect edge-case handling. This is the highest-value layer.
 3. **Safety & security.** Injection (SQL, shell, HTML/XSS, path traversal), authentication/authorization gaps, secrets or credentials in code, unsafe deserialization, resource leaks, unbounded input, and misuse of dangerous APIs.
