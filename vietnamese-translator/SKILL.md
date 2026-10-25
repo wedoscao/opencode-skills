@@ -57,7 +57,7 @@ Reproduce the source structure, changing only the prose. Do not reformat.
 
 1. Read the full source once to understand context and which terms recur (so you can stay consistent).
 2. Translate the prose, keeping the formatting structure intact.
-3. Review: check that every technical term you intended to keep is still in English, diacritics are correct, and the Vietnamese reads naturally.
+3. Review: check that every technical term you intended to keep is still in English, diacritics are correct, and the Vietnamese reads naturally. Run the bundled checker to catch the mechanical failures: `python scripts/check_format.py --source src.md --target vi.md` — it verifies fenced code blocks are byte-identical, no inline-code token or URL was dropped, headings/tables kept their shape, and the target actually contains Vietnamese diacritics.
 4. Output only the translation (or the translation alongside the source if the user asked for a side-by-side comparison). If the source was very long, you may offer a summary of what you changed, but the default deliverable is just the translated text.
 
 ## Examples
