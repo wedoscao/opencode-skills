@@ -9,10 +9,10 @@ Help the user turn a set of changes into well-formed commits and a pull request.
 
 ## Workflow
 
-1. **Inspect the changes.** Run `git status`, `git diff --staged` (fall back to `git diff` if nothing is staged), and `git log --oneline -15` to learn the repo's commit style, existing scopes, and whether the user uses Conventional Commits or a different habit.
+1. **Inspect the changes.** Run `python scripts/inspect_repo.py --repo <repo> --diff` to collect the branch, status, staged/unstaged stats, recent commits, the repo's commit convention and existing scopes, and any PR template. If the script is unavailable, fall back to `git status`, `git diff --staged` (or `git diff` if nothing is staged), and `git log --oneline -15`.
 2. **Check for a PR template.** Look for `.github/PULL_REQUEST_TEMPLATE.md` or `.github/pull_request_template.md`. If one exists, follow it; otherwise use the brief format below.
 3. **Decide atomicity.** If the staged changes span unrelated concerns, propose splitting them into multiple commits (one logical change per commit). If splitting requires staging hunks, give the `git add` commands for the right files/paths. Never silently merge unrelated work into one commit — but don't over-split either; one change, one commit.
-4. **Draft the commit message(s).** Follow the Conventional Commits rules below.
+4. **Draft the commit message(s).** Follow the Conventional Commits rules below, then lint each one before presenting: `python scripts/lint_commit.py --file msg.txt --allowed-types <types observed by inspect_repo>`. Fix every violation rather than showing a message that will fail the rules.
 5. **Draft the PR title and description.** Title from the commit subject; body brief.
 6. **Present everything** — message(s), PR text, and the exact commands — in one place, then ask whether to run them.
 
@@ -106,3 +106,10 @@ Then ask the user whether to run them (or just the ones they pick). If a multi-l
 - Don't write "added"/"fixed" in the subject; use imperative mood.
 - Don't stuff unrelated changes into a single commit to save effort; propose the split.
 - Don't fabricate issue numbers or test results. Reference real numbers only if they're visible in the branch name, commit history, or the user's message.
+
+## Bundled scripts
+
+| Script | Purpose |
+|---|---|
+| `scripts/inspect_repo.py` | Branch, status, staged/unstaged stats, recent commits, convention + scope detection, PR template |
+| `scripts/lint_commit.py` | Validates a draft message against Conventional Commits rules (type, length, imperative, `!`→BREAKING CHANGE, wrapping) |
