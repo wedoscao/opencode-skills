@@ -24,6 +24,61 @@ ship evals also include an `evals/evals.json` fixture file. Skills with
 deterministic or repetitive steps ship a `scripts/` directory and reference the
 scripts from `SKILL.md`.
 
+## Ported from mattpocock/skills
+
+27 skills ported from [Matt Pocock's `skills`](https://github.com/mattpocock/skills), grouped under `engineering/` and `productivity/`. Matt's original `code-review` (two-axis Standards + Spec review) is installed as **`code-review-2axis`** so it does not shadow the general-purpose `code-review` above.
+
+### Engineering
+
+**User-invoked**
+
+| Skill | What it does |
+| --- | --- |
+| [`ask-matt`](engineering/ask-matt/SKILL.md) | Router: ask which skill or flow fits your situation |
+| [`grill-with-docs`](engineering/grill-with-docs/SKILL.md) | Grilling session that also builds the domain model (glossary + ADRs) |
+| [`triage`](engineering/triage/SKILL.md) | Move issues/PRs through triage roles, write agent-ready briefs |
+| [`improve-codebase-architecture`](engineering/improve-codebase-architecture/SKILL.md) | Scan for deepening opportunities, render an HTML report, grill through a pick |
+| [`setup-matt-pocock-skills`](engineering/setup-matt-pocock-skills/SKILL.md) | One-time per-repo setup (issue tracker, labels, doc layout) |
+| [`to-spec`](engineering/to-spec/SKILL.md) | Turn the conversation into a spec, publish to the tracker |
+| [`to-tickets`](engineering/to-tickets/SKILL.md) | Break a plan/spec into tracer-bullet tickets with blocking edges |
+| [`implement`](engineering/implement/SKILL.md) | Build from a spec/tickets, driving `tdd`, closing with `code-review-2axis` |
+| [`implement-spec`](engineering/implement-spec/SKILL.md) | Implement a whole spec on one branch via parallel implementer subagents |
+| [`wayfinder`](engineering/wayfinder/SKILL.md) | Plan huge work as a shared map of decision tickets |
+| [`retro`](engineering/retro/SKILL.md) | Suggest environment improvements after a session |
+
+**Model-invoked**
+
+| Skill | What it does |
+| --- | --- |
+| [`prototype`](engineering/prototype/SKILL.md) | Throwaway prototype to answer a design question |
+| [`diagnosing-bugs`](engineering/diagnosing-bugs/SKILL.md) | Disciplined diagnosis loop: feedback loop, minimise, hypothesise, fix |
+| [`research`](engineering/research/SKILL.md) | Investigate a question against primary sources, write a cited file |
+| [`tdd`](engineering/tdd/SKILL.md) | Red-green-refactor, one vertical slice at a time |
+| [`domain-modeling`](engineering/domain-modeling/SKILL.md) | Build/sharpen the domain model; update glossary + ADRs |
+| [`codebase-design`](engineering/codebase-design/SKILL.md) | Deep-module design vocabulary (module, interface, seam, adapter, …) |
+| [`code-review-2axis`](engineering/code-review-2axis/SKILL.md) | Two-axis diff review (Standards + Spec) via parallel subagents |
+| [`pr`](engineering/pr/SKILL.md) | The shape of a good PR body |
+| [`wizard`](engineering/wizard/SKILL.md) | Generate an interactive bash wizard for human-only steps |
+
+### Productivity
+
+**User-invoked**
+
+| Skill | What it does |
+| --- | --- |
+| [`grill-me`](productivity/grill-me/SKILL.md) | Relentless interview to sharpen a plan/design |
+| [`handoff`](productivity/handoff/SKILL.md) | Compact the conversation into a handoff document |
+| [`teach`](productivity/teach/SKILL.md) | Teach a concept over multiple sessions in a stateful workspace |
+| [`to-questionnaire`](productivity/to-questionnaire/SKILL.md) | Turn a decision you can't answer into a questionnaire for someone who can |
+| [`wait-what`](productivity/wait-what/SKILL.md) | Re-pitch a message that didn't land |
+
+**Model-invoked**
+
+| Skill | What it does |
+| --- | --- |
+| [`grilling`](productivity/grilling/SKILL.md) | The interview primitive behind grill-me / grill-with-docs / triage / wayfinder |
+| [`writing-for-agents`](productivity/writing-for-agents/SKILL.md) | How to write documents agents consume (skills, AGENTS.md, pointed-at docs) |
+
 ## Installation
 
 Copy the skill directories into your opencode skills directory:
