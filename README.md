@@ -79,6 +79,20 @@ scripts from `SKILL.md`.
 | [`grilling`](productivity/grilling/SKILL.md) | The interview primitive behind grill-me / grill-with-docs / triage / wayfinder |
 | [`writing-for-agents`](productivity/writing-for-agents/SKILL.md) | How to write documents agents consume (skills, AGENTS.md, pointed-at docs) |
 
+## Ported from K-Dense-AI/scientific-agent-skills
+
+56 skills ported from [K-Dense's Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills), grouped under `k-dense/`. Two sets: field-independent research workflow skills, and ML/AI + data-analysis package skills. Each lives at `k-dense/<name>/SKILL.md`.
+
+### Research workflow (35)
+
+`paper-lookup`, `literature-review`, `paperclip`, `bgpt-paper-search`, `paperzilla`, `exa-search`, `parallel-web`, `research-lookup`, `database-lookup`, `ontology-term-resolution`, `scientific-critical-thinking`, `scholar-evaluation`, `peer-review`, `scientific-writing`, `citation-management`, `pyzotero`, `venue-templates`, `scientific-slides`, `latex-posters`, `pptx-posters`, `scientific-schematics`, `infographics`, `markdown-mermaid-writing`, `scientific-visualization`, `generate-image`, `hypothesis-generation`, `scientific-brainstorming`, `experimental-design`, `statistical-power`, `statistical-analysis`, `uncertainty-and-units`, `exploratory-data-analysis`, `research-grants`, `what-if-oracle`, `consciousness-council`
+
+### ML/AI and data (21)
+
+`pytorch-lightning`, `transformers`, `stable-baselines3`, `pufferlib`, `scikit-learn`, `scikit-survival`, `shap`, `aeon`, `timesfm-forecasting`, `pymc`, `pymoo`, `torch-geometric`, `umap-learn`, `statsmodels`, `dask`, `polars`, `vaex`, `matplotlib`, `seaborn`, `networkx`, `optimize-for-gpu`
+
+Some skills need external credentials or CLIs to run — `exa-search` (Exa), `parallel-web` (Parallel), `bgpt-paper-search` (BGPT), `paperzilla` (`pz` CLI), `paperclip` (GXL CLI + auth), and the image/diagram skills (`generate-image`, `infographics`, `scientific-schematics`, via OpenRouter). The rest run locally once their Python dependencies are installed.
+
 ## Installation
 
 Copy the skill directories into your opencode skills directory:
