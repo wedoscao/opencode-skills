@@ -30,7 +30,7 @@ metadata:
 
 Manage citations systematically throughout the research and writing process. This skill provides tools and strategies for searching academic databases (Google Scholar, PubMed), extracting accurate metadata from multiple sources (CrossRef, PubMed, arXiv), validating citation information, and generating properly formatted BibTeX entries.
 
-Critical for maintaining citation accuracy, avoiding reference errors, and ensuring reproducible research. Integrates seamlessly with the literature-review skill for comprehensive research workflows.
+Critical for maintaining citation accuracy, avoiding reference errors, and ensuring reproducible research. Integrates seamlessly with the scientific-researcher skill for comprehensive research workflows.
 
 ## When to Use This Skill
 
@@ -158,7 +158,7 @@ Validation rules and venue standards are in
 ### Phase 5: Integration with Writing Workflow
 
 Search, extract, format, validate, then cite. End-to-end sequences — including the
-literature-review and Zotero/pyzotero export paths — are in
+scientific-researcher and Zotero/pyzotero export paths — are in
 [references/core_workflow.md](references/core_workflow.md) and
 [references/example_workflows.md](references/example_workflows.md).
 
@@ -220,9 +220,9 @@ references are illustrative unless recorded as live smoke tests there.
 - **Citation Management**: Metadata extraction and validation
 
 **Combined workflow**:
-1. Use literature-review for systematic search methodology
+1. Use scientific-researcher for systematic search methodology
 2. Use citation-management to extract and validate citations
-3. Use literature-review to synthesize findings
+3. Use scientific-researcher to synthesize findings
 4. Use citation-management to ensure bibliography accuracy
 
 ### Scientific Writing Skill

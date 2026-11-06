@@ -26,7 +26,7 @@ Scientific presentations are a critical medium for communicating research, shari
 
 **CRITICAL DESIGN PHILOSOPHY**: Scientific presentations should be VISUALLY ENGAGING and RESEARCH-BACKED. Avoid dry, text-heavy slides at all costs. Great scientific presentations combine:
 - **Compelling visuals**: High-quality figures, images, diagrams (not just bullet points)
-- **Research context**: Proper citations from research-lookup establishing credibility
+- **Research context**: Proper citations from paper-lookup establishing credibility
 - **Minimal text**: Bullet points as prompts, YOU provide the explanation verbally
 - **Professional design**: Modern color schemes, strong visual hierarchy, generous white space
 - **Story-driven**: Clear narrative arc, not just data dumps
@@ -241,7 +241,7 @@ often sink a talk are catalogued in
 - **Prior work comparison**: Find papers to compare your results against
 - **Supporting evidence**: Locate literature supporting your interpretations
 - **Question preparation**: Find papers that might inform Q&A responses
-- **Always use research-lookup** when developing any scientific presentation to ensure proper context and citations
+- **Always use paper-lookup** when developing any scientific presentation to ensure proper context and citations
 
 **Scientific Writing**:
 - Convert paper content to presentation format
@@ -293,7 +293,7 @@ Comprehensive guides for specific aspects:
 ### For a 15-Minute Conference Talk
 
 1. **Research & Plan** (45 minutes):
-   - **Use research-lookup** to find 8-12 relevant papers for citations
+   - **Use paper-lookup** to find 8-12 relevant papers for citations
    - Build reference list (background, comparison studies)
    - Outline content (intro → methods → 2-3 key results → conclusion)
    - **Create detailed plan for each slide** (title, key points, visual elements)
@@ -328,7 +328,7 @@ Comprehensive guides for specific aspects:
    - Practice 3-5 times with timer
    - Aim for 13-14 minutes (leave buffer)
    - Record yourself, watch playback
-   - **Prepare for questions** (use research-lookup to anticipate)
+   - **Prepare for questions** (use paper-lookup to anticipate)
 
 5. **Finalize** (30 minutes):
    - Generate backup/appendix slides if needed
@@ -354,7 +354,7 @@ See `assets/powerpoint_design_guide.md` for the complete PowerPoint workflow.
 ## Summary: Key Principles
 
 1. **Visual-First Design**: Every slide needs strong visual element (figure, image, diagram) - avoid text-only slides
-2. **Research-Backed**: Use research-lookup to find 8-15 papers, cite 3-5 in intro, 3-5 in discussion
+2. **Research-Backed**: Use paper-lookup to find 8-15 papers, cite 3-5 in intro, 3-5 in discussion
 3. **Modern Aesthetics**: Choose contemporary color palette matching topic, not default themes
 4. **Minimal Text**: 3-4 bullets, 4-6 words each (24-28pt font), let visuals tell story
 5. **Structure**: Follow story arc, spend 40-50% on results

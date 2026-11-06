@@ -278,7 +278,7 @@ Workflow:
 3. Use plotting or schematic tools where appropriate to the scientific content
 ```
 
-### With `literature-review`
+### With `scientific-researcher`
 
 Literature review produces summaries with lots of relationship data. Use this skill to:
 

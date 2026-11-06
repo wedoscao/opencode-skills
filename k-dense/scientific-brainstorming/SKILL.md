@@ -35,7 +35,7 @@ Keep these activities separate:
 For an observation-led testable hypothesis, hand off to
 `hypothesis-generation`. For study architecture, use `experimental-design`;
 for sample size, `statistical-power`; for existing evidence,
-`literature-review`; and for analysis, `statistical-analysis`.
+`scientific-researcher`; and for analysis, `statistical-analysis`.
 
 ## Operating rules
 
